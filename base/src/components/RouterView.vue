@@ -3,8 +3,10 @@
 import {computed} from "vue"
 import router from "../router/index.js"
 
-let view = computed(()=>{
-  console.log(123456)
+let view = computed(() => {
+  const url = window.location.pathname
+  const route = router.routes.find(route => route.path === url)
+  return route.component
 })
 </script>
 
