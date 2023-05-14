@@ -1,16 +1,19 @@
 import Home from "../views/Home.vue"
 import About from "../views/About.vue"
+import {ref} from "vue"
 
+const url = ref(window.location.pathname)
 const router = {
-  routes:[
+  routes: [
     {
-      path:'/',
-      component:Home
+      path: "/",
+      component: Home
     },
     {
-      path:'/about',
+      path: "/about",
       component: About
     }
   ]
 }
-export default router;
+export default router
+export {url}

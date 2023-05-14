@@ -2,10 +2,10 @@
 
 import {computed} from "vue"
 import router from "../router/index.js"
+import {url} from '../router'
 
 let view = computed(() => {
-  const url = window.location.pathname
-  const route = router.routes.find(route => route.path === url)
+  const route = router.routes.find(route => route.path === url.value)
   return route.component
 })
 </script>

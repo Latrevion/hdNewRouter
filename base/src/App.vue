@@ -1,13 +1,12 @@
 <script setup>
 
-import RouterViews from "./components/RouterView.vue"
 
 
 </script>
 
 <template>
-  <a href="/">home</a>
-  <a href="/about">about</a>
+<RouterLink to="/">Home</RouterLink>
+<RouterLink to="/about">About</RouterLink>
   <hr>
 <router-views></router-views>
 </template>
