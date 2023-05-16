@@ -1,13 +1,13 @@
-<script>
-import {defineComponent} from "vue"
+<script setup="">
+import {ref} from "vue"
+import api from "../api.js"
 
-export default defineComponent({
-  name: "Home"
-})
+const article = ref(await api.all())
+
 </script>
 
 <template>
-Home
+{{article}}
 </template>
 
 <style scoped>
