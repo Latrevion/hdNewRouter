@@ -1,21 +1,23 @@
 <script setup>
-
+import Navigation from "./components/Navigation.vue"
 </script>
 
 <template>
   <suspense>
     <template #default>
       <div>
-        <router-link :to="{name:'home'}">home</router-link>
-        |
-        <router-link :to="{name:'article'}">article</router-link>
-        <br>
+        <Navigation class='navigation'></Navigation>
         <router-view></router-view>
       </div>
     </template>
   </suspense>
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.navigation{
+  margin-bottom: 20px;
+  a{
+    margin-right: 20px;
+  }
+}
 </style>

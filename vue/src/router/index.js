@@ -4,8 +4,8 @@ import Article from "../views/Article.vue"
 
 const router = createRouter({
   history:createWebHistory(),
-  // history:createWebHistory('shop'),
-  // history:createWebHashHistory('shop'),
+  // linkActiveClass:'active',
+  // linkExactActiveClass:'exact',
   routes:[{
     path:'/',
     name:'home',
