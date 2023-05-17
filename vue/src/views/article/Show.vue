@@ -1,5 +1,5 @@
 <script setup>
-import api from "../../api/article.js"
+import api from "@/api/article.js"
 import {useRoute} from "vue-router"
 import {reactive, ref} from "vue"
 

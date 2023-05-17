@@ -15,6 +15,9 @@
     background-color: #fff;
     text-decoration: none;
     padding: 5px 10px ;
+    color:#333;
+    font-weight:bold ;
+
     &.router-link-active {
       background-color: #f1c40f;
     }

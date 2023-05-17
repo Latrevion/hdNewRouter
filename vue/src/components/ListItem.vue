@@ -1,6 +1,6 @@
 <script setup>
 import {ref} from "vue"
-import api from "../api/article.js"
+import api from "@/api/article.js"
 
 const articles = ref(await api.all())
 // const articles = ref(null)
