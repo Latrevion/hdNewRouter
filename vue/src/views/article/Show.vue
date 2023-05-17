@@ -1,10 +1,14 @@
 <script setup>
-import api from "../api.js"
+import api from "../../api/article.js"
 import {useRoute} from "vue-router"
 import {reactive, ref} from "vue"
 
 const route = useRoute()
 const article = await api.find(route.params.id)
+
+//query
+// const article = await api.find(route.query.id)
+
 // const article = ref('')
 //  api.find(route.params.id).then(r =>article.value=r)
 </script>

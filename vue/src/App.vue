@@ -11,7 +11,7 @@ import Navigation from "./components/Navigation.vue"
 <!--          <router-view></router-view>-->
 <!--        </div>-->
         <router-view #default="{route,Component}">
-          <div :class="route.meta?.class">
+          <div class="router-view">
             <component :is="Component"></component>
           </div>
         </router-view>
@@ -25,11 +25,7 @@ import Navigation from "./components/Navigation.vue"
   margin-bottom: 20px;
 }
 
-.home {
-  background-color: #9b59b6;
-  padding: 20px;
-}
-.article{
+.router-view {
   background-color: #f3f3f3;
   padding: 20px;
 }

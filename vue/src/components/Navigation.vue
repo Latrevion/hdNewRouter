@@ -3,8 +3,8 @@
 
 <template>
   <div class="navigation">
-    <router-link  :to="{name:'home'}">home</router-link>
-    <router-link  :to="{name:'article'}">article</router-link>
+    <router-link  :to="{name:'home'}">首页</router-link>
+    <router-link  :to="{name:'article'}">列表页</router-link>
   </div>
 
 </template>
