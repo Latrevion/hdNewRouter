@@ -7,14 +7,15 @@ defineProps({
 </script>
 
 <template>
-<div class="list-item">{{article.title}}</div>
+  <router-link :to="`/show/${article.id}`" class="list-item">{{ article.title }}</router-link>
 </template>
 
 <style scoped>
-.list-item{
-background-color: #16a085;
+.list-item {
+  background-color: #16a085;
   color: #fff;
   padding: 5px 10px;
+  display: block;
   margin-bottom: 10px;
 }
 </style>

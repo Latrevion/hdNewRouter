@@ -10,7 +10,6 @@ import Navigation from "./components/Navigation.vue"
 <!--        <div class="router-view">-->
 <!--          <router-view></router-view>-->
 <!--        </div>-->
-
         <router-view #default="{route,Component}">
           <div :class="route.meta?.class">
             <component :is="Component"></component>
