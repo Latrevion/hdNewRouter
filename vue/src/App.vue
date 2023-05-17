@@ -7,17 +7,25 @@ import Navigation from "./components/Navigation.vue"
     <template #default>
       <div>
         <Navigation class='navigation'></Navigation>
-        <router-view></router-view>
+        <div class="router-view">
+          <router-view></router-view>
+        </div>
       </div>
     </template>
   </suspense>
 </template>
 
 <style lang="scss" scoped>
-.navigation{
+.navigation {
   margin-bottom: 20px;
-  a{
+
+  a {
     margin-right: 20px;
   }
+}
+
+.router-view {
+  background-color: #f3f3f3;
+  padding: 20px;
 }
 </style>
