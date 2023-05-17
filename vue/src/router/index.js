@@ -9,11 +9,13 @@ const router = createRouter({
   routes:[{
     path:'/',
     name:'home',
+    meta:{class:'home'},
     component:Home
   },
     {
       path:'/article',
       name:'article',
+      meta:{class: 'article'},
       component:Article
     }
   ]
