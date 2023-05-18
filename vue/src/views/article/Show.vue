@@ -1,7 +1,8 @@
 <script setup>
 import api from "@/api/article.js"
 import {useRoute} from "vue-router"
-import {reactive, ref} from "vue"
+import ListArticle from "@/components/ListArticle.vue"
+
 
 const route = useRoute()
 const article = await api.find(route.params.id)
@@ -15,25 +16,38 @@ console.log(route.params.id)
 </script>
 
 <template>
-  <div class="show">
-    <h2>
-      {{ article.title }}
-    </h2>
-    <div>
+  <div class="article-show">
+    <div class="show">
+      <h2>
+        {{ article.title }}
+      </h2>
       {{ article.content }}
+    </div>
+    <div class="list-article">
+      <list-article></list-article>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.show {
-  padding: 20px;
-  background-color: #f3f3f3;
+.article-show {
+  display: grid;
+  grid-template-columns:repeat(6, 1fr);
 
-  div {
-    color: #666;
-    font-size: 0.8rem;
-    line-height: 1.6rem;
+  .show {
+    grid-column: span 4;
+    padding: 20px;
+    background-color: #f3f3f3;
+
+    div {
+      color: #666;
+      font-size: 0.8rem;
+      line-height: 1.6rem;
+    }
+  }
+
+  .list-article {
+    grid-column: span 2;
   }
 }
 </style>
