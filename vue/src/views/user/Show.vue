@@ -1,26 +1,20 @@
 <script setup>
-import api from "@/api/article.js"
+import api from "@/api/user.js"
 import {useRoute} from "vue-router"
 import {reactive, ref} from "vue"
 
 const route = useRoute()
-const article = await api.find(route.params.id)
-console.log(route.params.id)
+const user = await api.find(route.params.id)
 
-//query
-// const user = await api.find(route.query.id)
-
-// const user = ref('')
-//  api.find(route.params.id).then(r =>user.value=r)
 </script>
 
 <template>
   <div class="show">
     <h2>
-      {{ article.title }}
+      {{ user.id }}
     </h2>
     <div>
-      {{ article.content }}
+      {{ user.name }}
     </div>
   </div>
 </template>

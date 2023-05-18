@@ -3,14 +3,14 @@ import {ref} from "vue"
 import api from "@/api/article.js"
 
 const articles = ref(await api.all())
-// const articles = ref(null)
-// api.all().then(r =>{articles.value = r;console.log('app')})
+// const users = ref(null)
+// api.all().then(r =>{users.value = r;console.log('app')})
 </script>
 
 <template>
-  <router-link :to="`/show/${article.id}`" class="list-item" v-for="article in articles" :key="article.id" :article="article">{{ article.title }}</router-link>
-<!--  <router-link :to="{name:'show',query:{id:article.id}}" class="list-item">{{ article.title }}</router-link>-->
-<!--  <router-link :to="{name:'show',params:{id:article.id}}" class="list-item">{{ article.title }}</router-link>-->
+  <router-link v-for="article in articles" :key="article.id" :article="article" :to="`/show/${article.id}`" class="list-item" >{{ article.title }}</router-link>
+<!--  <router-link :to="{name:'show',query:{id:user.id}}" class="list-item">{{ user.title }}</router-link>-->
+<!--  <router-link :to="{name:'show',params:{id:user.id}}" class="list-item">{{ user.title }}</router-link>-->
 </template>
 
 <style scoped>

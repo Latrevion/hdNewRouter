@@ -5,6 +5,7 @@
   <div class="navigation">
     <router-link  :to="{name:'home'}">首页</router-link>
     <router-link  :to="{name:'article'}">列表页</router-link>
+    <router-link  :to="{name:'UserList'}">用户</router-link>
   </div>
 
 </template>

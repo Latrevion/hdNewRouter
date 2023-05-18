@@ -13,8 +13,8 @@ module.exports = () => {
       content: Random.cparagraph(100),
     })
     data.user.push({
+      id: i,
       name: Random.word(3),
-      avatar: Random.image('200x200', '#f39c12', Random.word(1)),
     })
   }
   return data
