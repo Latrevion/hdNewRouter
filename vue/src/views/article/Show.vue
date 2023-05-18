@@ -2,11 +2,17 @@
 import api from "@/api/article.js"
 import {useRoute} from "vue-router"
 import ListArticle from "@/components/ListArticle.vue"
+import {ref, watch} from "vue"
 
 
 const route = useRoute()
-const article = await api.find(route.params.id)
-console.log(route.params.id)
+const article = ref()
+article.value =await api.find(route.params.id)
+//监听route路由信息变化，更新内容
+watch(route, async ()=>{
+  article.value = await api.find(route.params.id)
+})
+
 
 //query
 // const user = await api.find(route.query.id)
