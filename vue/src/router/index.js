@@ -4,6 +4,7 @@ import Article from "@/views/article/List.vue"
 import Show from "@/views/article/Show.vue"
 import UserList from "@/views/user/List.vue"
 import UserShow from "@/views/user/Show.vue"
+import NotFound from '@/views/common/NotFound.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -21,9 +22,12 @@ const router = createRouter({
       component: Article
     },
     {
-      path: "/show/:id",
+      // path: "/show/:id",
+      // path: "/show/:id(\\d+)",
+      path: "/show/article-:id(\\d+).html",
+      // path: "/show/:id([a-z]+)",
       // path: "/show",
-      name: "show",
+      name: "article-show",
       component: Show
     },
     {
@@ -33,8 +37,12 @@ const router = createRouter({
     },
     {
       path: "/usershow/:id",
-      name: "usershow",
+      name: "user-show",
       component: UserShow
+    },
+    {
+      path:'/:any(.*)',
+      component:NotFound
     }
   ]
 })

@@ -5,7 +5,11 @@ const users = ref(await api.all())
 </script>
 
 <template>
-  <router-link v-for="user in users" :key="user.id" :user="user" :to="`/usershow/${user.id}`" class="list-item" >{{ user.name }}</router-link>
+  <router-link v-for="user in users"
+               :key="user.id" :user="user"
+               :to="{name:'user-show',params:{id:user.id}}" class="list-item" >
+    {{ user.name }}
+  </router-link>
 </template>
 
 <style scoped>

@@ -11,8 +11,12 @@ const articles = ref(await api.all())
 <template>
   <Card>
     <template #header>文章列表</template>
-    <router-link v-for="article in articles" :key="article.id" :article="article" :to="`/show/${article.id}`"
-                 class="list-item">{{ article.title }}
+    <router-link v-for="article in articles"
+                 :key="article.id"
+                 :article="article"
+                 :to="{name:'article-show',params:{id:article.id}}"
+                 class="list-item">
+      {{ article.title }}
     </router-link>
   </Card>
   <!--  <router-link :to="{name:'show',query:{id:user.id}}" class="list-item">{{ user.title }}</router-link>-->
