@@ -32,7 +32,8 @@ const router = createRouter({
         {
           path: "show/article-:id(\\d+).html",
           name: "article-show",
-          component: Show
+          component: Show,
+          alias:'/:id(\\d+).html'
         },
         {
           path: "userlist",
@@ -54,7 +55,9 @@ const router = createRouter({
         {
           path:'mobile',
           name:'member',
-          component: Mobile
+          component: Mobile,
+          // alias:'/m',
+          // alias:['/m','/hd']
         },
         {
           path:'email',

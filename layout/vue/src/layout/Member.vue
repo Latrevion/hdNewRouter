@@ -7,6 +7,7 @@
     <nav>
       <router-link :to="{name:'home'}">首页</router-link>
       <router-link :to="{name:'member'}">修改手机号</router-link>
+<!--      <router-link to="/m">修改手机号</router-link>-->
       <router-link :to="{name:'email'}">绑定邮箱</router-link>
     </nav>
     <main>
