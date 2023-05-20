@@ -5,9 +5,11 @@ import Show from "@/views/front/article/Show.vue"
 import UserList from "@/views/front/user/List.vue"
 import UserShow from "@/views/front/user/Show.vue"
 import NotFound from "@/views/common/NotFound.vue"
-import NavigationUser from "@/components/NavigationUser.vue"
+// import NavigationUser from "@/components/NavigationUser.vue"
 import Front from "@/layout/Front.vue"
 import Member from "@/layout/Member.vue"
+import Mobile from '@/views/member/Mobile.vue'
+import Email from '@/views/member/Email.vue'
 
 
 const router = createRouter({
@@ -15,7 +17,6 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "front",
       component: Front,
       children: [
         {
@@ -43,6 +44,22 @@ const router = createRouter({
           name: "user-show",
           component: UserShow
         },
+      ]
+    },
+    {
+      path:"/member",
+      // name:'member',
+      component:Member,
+      children:[
+        {
+          path:'mobile',
+          name:'member',
+          component: Mobile
+        },
+        {
+          path:'email',
+          component: Email
+        }
       ]
     },
     {

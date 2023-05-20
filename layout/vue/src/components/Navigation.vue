@@ -6,6 +6,7 @@
     <router-link  :to="{name:'home'}">首页</router-link>
     <router-link  :to="{name:'article'}">列表页</router-link>
     <router-link  :to="{name:'UserList'}">用户</router-link>
+    <router-link  :to="{name:'member'}">个人中心</router-link>
   </div>
 
 </template>
@@ -19,7 +20,7 @@
     color:#333;
     font-weight:bold ;
 
-    &.router-link-active {
+    &.router-link-exact-active{
       background-color: #f1c40f;
     }
   }
