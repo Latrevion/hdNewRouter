@@ -58,6 +58,7 @@ const router = createRouter({
         },
         {
           path:'email',
+          name:'email',
           component: Email
         }
       ]
