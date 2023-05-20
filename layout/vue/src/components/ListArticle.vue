@@ -23,7 +23,7 @@ const articles = ref(await api.all())
   <!--  <router-link :to="{name:'show',params:{id:user.id}}" class="list-item">{{ user.title }}</router-link>-->
 </template>
 
-<style scoped>
+<style lang="scss" >
 .list-item {
   background-color: #16a085;
   color: #fff;

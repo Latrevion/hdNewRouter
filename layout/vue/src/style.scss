@@ -14,4 +14,8 @@ body {
 
 a {
   text-decoration: none;
+
+  &.router-link-exact-active{
+    background-color: #f1c40f;
+  }
 }
