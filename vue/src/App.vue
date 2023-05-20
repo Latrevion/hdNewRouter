@@ -10,11 +10,11 @@ import Navigation from "@/components/Navigation.vue"
 <!--        <div class="router-view">-->
 <!--          <router-view></router-view>-->
 <!--        </div>-->
-        <router-view #default="{route,Component}">
-          <div class="router-view">
-            <component :is="Component"></component>
+
+          <div class="front-layout">
+            <router-view />
           </div>
-        </router-view>
+
       </div>
     </template>
   </suspense>
@@ -25,7 +25,7 @@ import Navigation from "@/components/Navigation.vue"
   margin-bottom: 20px;
 }
 
-.router-view {
+.front-layout {
   background-color: #f3f3f3;
   padding: 20px;
 }
