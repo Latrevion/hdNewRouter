@@ -49,12 +49,15 @@ const router = createRouter({
     },
     {
       path:"/member",
-      // name:'member',
+      name:'member',
       component:Member,
+      redirect:{name:'mobile'},
+      // redirect:{name:'email'},
+      // redirect:{path:'/member/mobile'},
       children:[
         {
           path:'mobile',
-          name:'member',
+          name:'mobile',
           component: Mobile,
           // alias:'/m',
           // alias:['/m','/hd']
