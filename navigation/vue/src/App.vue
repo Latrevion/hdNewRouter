@@ -1,5 +1,4 @@
 <script setup>
-
 </script>
 
 <template>
@@ -10,7 +9,13 @@
     <router-link :to="{name:'article'}">article</router-link>
   </div>
   <div class="view">
-    <router-view></router-view>
+    <suspense>
+      <template #default>
+        <div>
+          <router-view></router-view>
+        </div>
+      </template>
+    </suspense>
   </div>
 </template>
 
