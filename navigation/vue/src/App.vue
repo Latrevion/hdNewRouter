@@ -3,12 +3,13 @@
 </script>
 
 <template>
-  <router-link :to="{name:'home'}">Home</router-link>
-  <router-link :to="{name:'about'}">About</router-link>
-  <router-link :to="{name:'login'}">Login</router-link>
-
+  <div>
+    <router-link :to="{name:'home'}">Home</router-link>
+    <router-link :to="{name:'about'}">About</router-link>
+    <router-link :to="{name:'login'}">Login</router-link>
+    <router-link :to="{name:'article'}">article</router-link>
+  </div>
   <div class="view">
-
     <router-view></router-view>
   </div>
 </template>

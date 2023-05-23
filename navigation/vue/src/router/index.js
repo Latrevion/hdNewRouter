@@ -2,79 +2,59 @@ import {createRouter, createWebHistory} from "vue-router"
 import Home from "@/views/Home.vue"
 import About from "@/views/About.vue"
 import Login from "@/views/login.vue"
+import {loginCheck} from "@/helper.js"
+import Article from '@/views/Article.vue'
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [{
-    path: "/home",
+    path: "/",
     name: "home",
-    component: Home
+    component: Home,
+    beforeEnter: ( )=>{
+        console.log('beforeEnter')
+    }
+
   },
     {
       path: "/about",
       name: "about",
-      component: About
+      meta:{auth:true},
+      component: About,
+      // beforeEnter: [loginCheck]
+      beforeEnter: ( )=>{
+        console.log('beforeEnter')
+      }
     },
     {
       path: "/login",
       name: "login",
       component: Login
+    },
+    {
+      path: "/article",
+      name: "article",
+      component: Article
     }
   ]
 })
 
-// router.beforeEach((to, from) => {
-// console.log(from.name,to.name)
-// // return false
-// return new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     resolve()
-//   }, 2000)
-// })
-// })
-
-// router.beforeEach(async (to, from) => {
-//  // return  await new Promise(resolve => resolve(false))
-//  return  await new Promise(resolve => resolve(true))
-//   // return false
-//   // return true
-// })
-
-
-// router.beforeEach((to, from, next) => {
-//   if (to.name === "about") {
-//     next("/login")
-//   } else {
-//     next()
-//   }
-// })
-
-
-// router.beforeEach((to, from) => {
-//   if (to.name === "about") {
-//    // return ("/login")
-//     return from
-//   }
-// })
-
-
-
-router.beforeEach(( to,from)=>{
-console.log('beforeEach')
+router.beforeEach((to, from) => {
+  console.log("beforeEach")
 })
 
 
-router.beforeResolve(( to,from)=>{
-  console.log('beforeResolve')
+router.beforeResolve((to, from) => {
+  console.log("beforeResolve")
 })
 
 
-const route =[]
-router.afterEach(( to,from,failure)=>{
-  console.log('afterEach')
-  if (!failure){
+const route = []
+router.afterEach((to, from, failure) => {
+  console.log("afterEach")
+  if (!failure) {
     route.push(to.name)
-    localStorage.setItem('route',JSON.stringify(route))
+    localStorage.setItem("route", JSON.stringify(route))
   }
 
 })
