@@ -19,18 +19,27 @@
 //   }
 // }
 
-import {ref} from "vue"
-import {onBeforeRouteUpdate, onBeforeRouteLeave} from "vue-router"
+import {ref, watch} from "vue"
+import {useRoute, onBeforeRouteUpdate, onBeforeRouteLeave} from "vue-router"
 
 const articles = ref()
-articles.value = await fetch("http://127.0.0.1:3003/article").then(r => r.json())
+
+const route = useRoute()
+
+watch(route, async () => {
+  if (route.name === "article") {
+    articles.value = await fetch("http://127.0.0.1:3003/article").then(r => r.json())
+  }
+}, {immediate: true})
+
+// articles.value = await fetch("http://127.0.0.1:3003/article").then(r => r.json())
 // fetch("http://127.0.0.1:3003/article")
 //     .then(r => r.json())
 //     .then(data => articles.value = data);
 
-onBeforeRouteUpdate(async () => {
-  articles.value = await fetch("http://127.0.0.1:3003/article").then(r => r.json())
-})
+// onBeforeRouteUpdate(async () => {
+//   articles.value = await fetch("http://127.0.0.1:3003/article").then(r => r.json())
+// })
 </script>
 
 <template>
