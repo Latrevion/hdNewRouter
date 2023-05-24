@@ -9,7 +9,9 @@
   </div>
   <div class="router-view">
     <router-view #default="{Component}">
-      <transition name="fade">
+      <transition name="fade" enter-active-class="animate__animated animate__bounceIn"
+      leave-active-class="animate__animated animate__hinge"
+      >
         <component :is="Component"></component>
       </transition>
     </router-view>
@@ -17,33 +19,33 @@
 </template>
 
 <style lang="scss">
-.fade-enter-from {
-  opacity: 0;
-  transform: translateX(-100%);
-}
-
-.fade-enter-active {
-  transition: all 1s ease;
-}
-
-.fade-enter-to {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.fade-leave-from {
-  transform: translateX(0);
-
-}
-
-.fade-leave-active {
-  transition: all 1s ease;
-}
-
-.fade-leave-to {
-  transform: translateX(-100%);
-
-}
+//.fade-enter-from {
+//  opacity: 0;
+//  transform: translateX(-100%);
+//}
+//
+//.fade-enter-active {
+//  transition: all 1s ease;
+//}
+//
+//.fade-enter-to {
+//  opacity: 1;
+//  transform: translateX(0);
+//}
+//
+//.fade-leave-from {
+//  transform: translateX(0);
+//
+//}
+//
+//.fade-leave-active {
+//  transition: all 1s ease;
+//}
+//
+//.fade-leave-to {
+//  transform: translateX(-100%);
+//
+//}
 
 
 .link {
