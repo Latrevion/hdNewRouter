@@ -8,13 +8,19 @@ const router = createRouter({
   scrollBehavior(to, form, savedPosition) {
     const options = {behavior: "smooth"}
     if (to.meta.scrollEl?.el) options.el = to.meta.scrollEl.el
-    return savedPosition || options
+    if (to.meta.scrollEl?.top >= 0) options.top = to.meta.scrollEl.top
+
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(savedPosition || options)
+      }, 1000)
+    })
   },
   routes: [
     {
       path: "/",
       name: "home",
-      meta: {scrollEl:{el: "#home"}, enterClass: "animate__animated animate__bounceIn"},
+      meta: {scrollEl: {el: "#home"}, enterClass: "animate__animated animate__bounceIn"},
       component: home
     },
     {
@@ -26,6 +32,7 @@ const router = createRouter({
     {
       path: "/article",
       name: "article",
+      meta: {scrollEl: {top: 0}},
       component: article
     }
   ]
