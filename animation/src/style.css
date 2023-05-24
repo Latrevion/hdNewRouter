@@ -10,3 +10,10 @@ body{
   padding: 0;
   box-sizing: border-box;
 }
+
+.page{
+  border: 10px solid #ddd;
+  padding: 20px;
+  position: absolute;
+  background-color: #ffffff;
+}
