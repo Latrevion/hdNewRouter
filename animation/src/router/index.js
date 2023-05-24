@@ -5,6 +5,10 @@ import article from "@/views/article.vue"
 
 const router = createRouter({
   history: createWebHistory(),
+  scrollBehavior(to,form,savedPosition){
+    return savedPosition || {top:0}
+    // return savedPosition ?? {top:0}
+  },
   routes: [
     {
       path: "/",
