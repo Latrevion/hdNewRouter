@@ -6,7 +6,8 @@ import article from "@/views/article.vue"
 const router = createRouter({
   history: createWebHistory(),
   scrollBehavior(to,form,savedPosition){
-    return savedPosition || {top:0,behavior:'smooth'}
+    // return savedPosition || {el:'#hd',top:0,behavior:'smooth'}
+    return savedPosition || {el:'.page',top:0,behavior:'smooth'}
     // return savedPosition ?? {top:0}
   },
   routes: [
