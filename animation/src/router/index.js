@@ -1,6 +1,7 @@
 import {createRouter, createWebHistory} from "vue-router"
 import home from "@/views/home.vue"
 import about from "@/views/about.vue"
+import article from "@/views/article.vue"
 
 const router = createRouter({
   history: createWebHistory(),
@@ -14,7 +15,13 @@ const router = createRouter({
     {
       path: "/about",
       name: "about",
+      meta:{enterClass:'animate__animated animate__rotateIn'},
       component: about
+    },
+    {
+      path: "/article",
+      name: "article",
+      component: article
     }
   ]
 })
