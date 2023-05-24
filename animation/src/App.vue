@@ -8,9 +8,8 @@
     <router-link :to="{name:'about'}">about</router-link>
   </div>
   <div class="router-view">
-    <router-view #default="{Component}">
-      <transition name="fade" enter-active-class="animate__animated animate__bounceIn"
-      leave-active-class="animate__animated animate__hinge"
+    <router-view #default="{Component,route}">
+      <transition name="fade" :enter-active-class="route.meta.enterClass ?? 'animate__animated animate__zoomIn'"
       >
         <component :is="Component"></component>
       </transition>

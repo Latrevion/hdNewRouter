@@ -8,6 +8,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
+      meta:{enterClass:'animate__animated animate__bounceIn'},
       component: home
     },
     {
