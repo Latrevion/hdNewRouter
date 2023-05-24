@@ -12,8 +12,8 @@
       </div>
       <div class="router-view">
         <router-view #default="{Component,route}">
-          <transition name="fade" :enter-active-class="route.meta.enterClass ?? 'animate__animated animate__zoomIn'"
-          >
+<!--          <transition name="fade" :enter-active-class="route.meta.enterClass ?? 'animate__animated animate__zoomIn'">-->
+          <transition name="fade">
             <component :is="Component"></component>
           </transition>
         </router-view>

@@ -5,22 +5,22 @@ import article from "@/views/article.vue"
 
 const router = createRouter({
   history: createWebHistory(),
-  scrollBehavior(to,form,savedPosition){
-    // return savedPosition || {el:'#hd',top:0,behavior:'smooth'}
-    return savedPosition || {el:'.page',top:0,behavior:'smooth'}
-    // return savedPosition ?? {top:0}
+  scrollBehavior(to, form, savedPosition) {
+    const options = {behavior: "smooth"}
+    if (to.meta.scrollEl?.el) options.el = to.meta.scrollEl.el
+    return savedPosition || options
   },
   routes: [
     {
       path: "/",
       name: "home",
-      meta:{enterClass:'animate__animated animate__bounceIn'},
+      meta: {scrollEl:{el: "#home"}, enterClass: "animate__animated animate__bounceIn"},
       component: home
     },
     {
       path: "/about",
       name: "about",
-      meta:{enterClass:'animate__animated animate__rotateIn'},
+      meta: {enterClass: "animate__animated animate__rotateIn"},
       component: about
     },
     {

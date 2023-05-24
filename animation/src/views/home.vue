@@ -19,7 +19,7 @@
       Cum dicta exercitationem facere nihil possimus repellat rerum temporibus totam! Beatae consequuntur corporis,
       deserunt earum nam odio perspiciatis soluta totam? Blanditiis culpa cumque esse ipsa libero odio quod similique
       tempore. Aut blanditiis debitis impedit libero quibusdam quod reiciendis rem sunt tenetur unde.</p>
-    <div id="hd">hv</div>
+    <div id="home">hv</div>
   </div>
 </template>
 

@@ -19,7 +19,7 @@
       suscipit tenetur, velit vero vitae voluptate voluptatum! Ab aliquam amet asperiores autem commodi consequuntur
       debitis dolor dolore, error, est facilis fugiat id incidunt itaque laboriosam maiores molestiae non nulla odio
       quam quos repellendus rerum sed sint unde voluptatem voluptatum.</p>
-    <div id="hd">hv</div>
+    <div id="about">hv</div>
   </div>
 </template>
 
