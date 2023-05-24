@@ -3,19 +3,23 @@
 </script>
 
 <template>
-  <div class="link">
-    <router-link :to="{name:'home'}">home</router-link>
-    <router-link :to="{name:'about'}">about</router-link>
-    <router-link :to="{name:'article'}">article</router-link>
-  </div>
-  <div class="router-view">
-    <router-view #default="{Component,route}">
-      <transition name="fade" :enter-active-class="route.meta.enterClass ?? 'animate__animated animate__zoomIn'"
-      >
-        <component :is="Component"></component>
-      </transition>
-    </router-view>
-  </div>
+  <suspense>
+    <div>
+      <div class="lists">
+        <router-link :to="{name:'home'}">home</router-link>
+        <router-link :to="{name:'about'}">about</router-link>
+        <router-link :to="{name:'article'}">article</router-link>
+      </div>
+      <div class="router-view">
+        <router-view #default="{Component,route}">
+          <transition name="fade" :enter-active-class="route.meta.enterClass ?? 'animate__animated animate__zoomIn'"
+          >
+            <component :is="Component"></component>
+          </transition>
+        </router-view>
+      </div>
+    </div>
+  </suspense>
 </template>
 
 <style lang="scss">
@@ -48,7 +52,7 @@
 //}
 
 
-.link {
+.lists {
   a {
     display: inline-block;
     background-color: #16a085;
