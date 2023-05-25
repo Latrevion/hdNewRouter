@@ -26,5 +26,19 @@ const router = createRouter({
     // }
   ]
 })
+router.addRoute({
+  path: "/about",
+  name: "about",
+  component: about,
+})
+
+router.addRoute({
+  path: "/article",
+  name: "article",
+  component: article,
+})
+
+router.removeRoute('article')
+console.log(router.getRoutes())
 
 export default router

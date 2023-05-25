@@ -7,7 +7,7 @@
     <div>
       <div class="lists">
         <router-link :to="{name:'home'}">home</router-link>
-<!--        <router-link :to="{name:'about'}">about</router-link>-->
+        <router-link :to="{name:'about'}">about</router-link>
 <!--        <router-link :to="{name:'article'}">article</router-link>-->
       </div>
       <div class="router-view">
