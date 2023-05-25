@@ -1,5 +1,4 @@
 <script setup>
-
 </script>
 
 <template>
@@ -11,7 +10,6 @@
             {{route.meta.title}}
           </router-link>
         </span>
-        <a href="/abc">abc</a>
       </div>
       <div class="router-view">
         <router-view #default="{Component,route}">

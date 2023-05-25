@@ -1,7 +1,5 @@
 import {createRouter, createWebHistory} from "vue-router"
-import home from "@/views/home.vue"
-import about from "@/views/about.vue"
-import article from "@/views/article.vue"
+
 
 const router = createRouter({
   history: createWebHistory(),
