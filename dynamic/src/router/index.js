@@ -9,6 +9,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
+      meta:{title:'网站首页'},
       component:()=>import('@/views/home.vue')
     },
     {
@@ -19,19 +20,5 @@ const router = createRouter({
 
   ]
 })
-router.addRoute({
-  path: "/about",
-  name: "about",
-  component: about,
-})
-
-router.addRoute({
-  path: "/article",
-  name: "article",
-  component: article,
-})
-
-router.removeRoute('article')
-console.log(router.getRoutes())
 
 export default router

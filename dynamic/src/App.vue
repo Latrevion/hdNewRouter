@@ -6,9 +6,12 @@
   <suspense>
     <div>
       <div class="lists">
-        <router-link :to="{name:'home'}">home</router-link>
-        <router-link :to="{name:'about'}">about</router-link>
-<!--        <router-link :to="{name:'article'}">article</router-link>-->
+        <span  v-for="route of $router.getRoutes()" :key="route.name">
+          <router-link :to="{name:`${route.name}`}" v-if="route.meta?.title">
+            {{route.meta.title}}
+          </router-link>
+        </span>
+        <a href="/abc">abc</a>
       </div>
       <div class="router-view">
         <router-view #default="{Component,route}">
