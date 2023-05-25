@@ -4,16 +4,16 @@
 <template>
   <suspense>
     <div>
-      <div class="lists">
-        <span  v-for="route of $router.getRoutes()" :key="route.name">
-          <router-link :to="{name:`${route.name}`}" v-if="route.meta?.title">
-            {{route.meta.title}}
-          </router-link>
-        </span>
-      </div>
       <div class="router-view">
         <router-view #default="{Component,route}">
-            <component :is="Component"></component>
+          <div class="lists">
+          <span v-for="route of $router.getRoutes()" :key="route.name">
+          <router-link :to="{name:`${route.name}`}" v-if="route.meta?.title">
+            {{ route.meta.title }}
+          </router-link>
+          </span>
+          </div>
+          <component :is="Component"></component>
         </router-view>
       </div>
     </div>
